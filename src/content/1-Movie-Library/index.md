@@ -8,4 +8,4 @@ stack: 'ReactJs - Styled Components'
 image: 'movieLibrary.png'
 ---
 
-Uma biblioteca de filmes feita consumindo os datos providos pelo The Movie Database API.
+Uma biblioteca de filmes feita consumindo os dados providos pelo The Movie Database API.

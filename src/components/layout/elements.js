@@ -18,10 +18,7 @@ export const StyledSection = styled.section`
 `;
 
 export const Wrapper = styled.div`
-  padding: 6rem 0rem;
-  margin-top: 7rem;
   display: flex;
-  width: 100%;
   align-items: center;
   flex-direction: column;
   transition: color 0.2s ease-out;

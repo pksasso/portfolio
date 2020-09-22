@@ -19,11 +19,10 @@ const PortfolioItem = ({ portfolio, html, index }) => {
     display: flex;
     flex-direction: column;
     width: 100%;
-    align-items: center;
-    padding-right: 20em;
-    padding-left: 20em;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    /* align-items: center; */
+    min-height: 50rem;
+    /* padding-top: 4rem; */
+    /* padding-bottom: 4rem; */
     background-color: ${(props) =>
       props.index % 2 === 0 && props.theme.colors.light};
     clip-path: ${(props) =>
@@ -39,8 +38,13 @@ const PortfolioItem = ({ portfolio, html, index }) => {
 
   const ContentWrapper = styled.div`
     display: flex;
-    align-items: flex-start;
+    min-height: 30rem;
+    max-width: 80%;
+    align-items: center;
     width: 100%;
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
   `;
 
   const Title = styled.h1`
@@ -52,8 +56,9 @@ const PortfolioItem = ({ portfolio, html, index }) => {
   `;
 
   const Image = styled(Img)`
-    margin: 0 2rem;
+    /* margin: 0 2rem; */
     flex: 1 1 50%;
+    max-width: 80%;
     box-shadow: 0px 8px 32px -14px rgba(255, 255, 255, 0.3);
   `;
 
@@ -61,7 +66,6 @@ const PortfolioItem = ({ portfolio, html, index }) => {
     font-family: 'Montserrat';
     font-size: 1.5rem;
     line-height: 2rem;
-
     color: ${(props) => props.theme.colors.text};
   `;
 

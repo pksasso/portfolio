@@ -8,12 +8,21 @@ import Img from 'gatsby-image';
 
 import Social from '../components/social';
 
+const Wrapper = styled.div`
+  display: flex;
+  position: relative;
+  justify-content: center;
+  flex-direction: column;
+  /* width: 100vw; */
+  height: 100vh;
+`;
+
 const Head = styled.div`
   display: flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
 `;
 
 const Name = styled(animated.h1)`
@@ -32,50 +41,19 @@ const SubTitle = styled(animated.h2)`
   margin-top: 15px;
 `;
 
-const Post = styled.div`
-  display: flex;
-  background: #1f1f1f;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 50px;
-  padding-left: 20%;
-  padding-right: 20%;
-  padding-bottom: 50px;
-  clip-path: polygon(0 0%, 100% 4%, 100% 96%, 0% 100%);
-`;
-
-const PlaceHolder = styled.div`
-  height: 300px;
-  width: 100%;
-  background: #fff;
-`;
-
-const WrapperPostText = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background: red;
-  width: 100%;
-  background: red;
-  box-sizing: border-box;
-`;
-
 const ProfilePicture = styled(Img)`
   box-shadow: 0px 5px 12px -1px rgba(73, 73, 73, 1);
   border-radius: 100px;
 `;
 
 const ArrowWrapper = styled.div`
-  width: 2rem;
-  height: 2rem;
+  position: absolute;
   display: flex;
   align-items: center;
-  justify-content: center;
-  position: absolute;
-  bottom: 0;
+  top: 90%;
   left: 50%;
-  margin-bottom: 3rem;
+  bottom: 0;
+  transform: translate(-50%, 0);
 `;
 
 const Arrow = styled(FontAwesomeIcon)`
@@ -125,7 +103,7 @@ const Home = () => {
   });
 
   return (
-    <div>
+    <Wrapper>
       <Head>
         <animated.div style={ProfileSpring}>
           <ProfilePicture fixed={data.image.childImageSharp.fixed} />
@@ -133,11 +111,11 @@ const Home = () => {
         <Name style={NameSpring}>Patrick Sasso</Name>
         <SubTitle style={SubtitleSpring}>FrontEnd Developer</SubTitle>
         <Social />
-        <ArrowWrapper>
-          <Arrow icon={faChevronDown} />
-        </ArrowWrapper>
       </Head>
-    </div>
+      <ArrowWrapper>
+        <Arrow icon={faChevronDown} />
+      </ArrowWrapper>
+    </Wrapper>
   );
 };
 

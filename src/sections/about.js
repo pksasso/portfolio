@@ -1,15 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-content: center;
+import { Wrapper } from '../components/layout/elements';
+
+const AboutWrapper = styled(Wrapper)`
   width: 100%;
-  margin-top: 14rem;
+  margin-top: 13rem;
   line-height: 2.5rem;
   text-align: center;
-  padding: 0 20rem;
+  /* padding: 0 20rem; */
   color: ${(props) => props.theme.colors.text};
   font-family: 'Montserrat';
   font-weight: 300;
@@ -30,7 +29,7 @@ const Paragraph = styled.p`
 
 const About = () => {
   return (
-    <Wrapper>
+    <AboutWrapper>
       <Title>Sobre mim</Title>
       <Paragraph>
         Iniciei meus estudos de desenvolvimento na faculdade onde participei de
@@ -49,7 +48,7 @@ const About = () => {
         Desde então continuo estudando e gostando cada vez mais de aprender
         sobre Front End
       </Paragraph>
-    </Wrapper>
+    </AboutWrapper>
   );
 };
 

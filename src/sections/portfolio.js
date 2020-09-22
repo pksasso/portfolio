@@ -6,12 +6,18 @@ import { Wrapper } from '../components/layout/elements';
 import PortfolioItem from '../components/portfolioItem';
 
 const PortfolioWrapper = styled.div`
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; */
   width: 100%;
   & > div:nth-child(odd) > div {
     flex-direction: row-reverse;
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
+  }
+  @media (max-width: 767px) {
+    flex-direction: column;
   }
 `;
 
@@ -19,9 +25,8 @@ const Title = styled.h1`
   color: ${(props) => props.theme.colors.text};
   font-family: 'Montserrat';
   font-size: 2.5rem;
+  margin-bottom: 2rem;
 `;
-
-//background: ${(props) => props.theme.colors.light};
 const Portfolio = () => {
   const { allMarkdownRemark: items } = useStaticQuery(
     graphql`

@@ -8,8 +8,8 @@ import About from '../sections/about';
 const IndexPage = () => {
   return (
     <Layout>
-      <Home />
-      <About />
+      {/* <Home /> */}
+      {/* <About /> */}
       <Portfolio />
     </Layout>
   );
