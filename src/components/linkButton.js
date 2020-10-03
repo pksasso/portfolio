@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 const Button = styled.a`
   background: transparent;
@@ -19,10 +19,13 @@ const Button = styled.a`
     border-color: ${(props) => props.theme.colors.main};
     color: ${(props) => props.theme.colors.main};
   }
-`;
+  @media only screen and (max-width: 515px) {
+    font-size: 1.1rem;
+  }
+`
 
 const LinkButton = ({ children, ...rest }) => {
-  return <Button {...rest}>{children}</Button>;
-};
+  return <Button {...rest}>{children}</Button>
+}
 
-export default LinkButton;
+export default LinkButton

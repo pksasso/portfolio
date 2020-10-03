@@ -1,10 +1,11 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
   html {
     font-size: 62.5%; //1rem = 10px
     box-sizing: border-box;
     line-height: 1.15;
+    font-family: 'Montserrat';
   }
   
   body{
@@ -31,4 +32,4 @@ export default createGlobalStyle`
       -webkit-tap-highlight-color: rgba(0,0,0,0);
     }
 
-`;
+`

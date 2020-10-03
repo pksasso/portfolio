@@ -1,9 +1,8 @@
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import GlobalStyles from '../../styles/global';
-import styled from 'styled-components';
+import React from 'react'
+import { ThemeProvider } from 'styled-components'
+import GlobalStyles from '../../styles/global'
 
-import theme from '../../styles/theme';
+import theme from '../../styles/theme'
 
 const Layout = ({ children }) => {
   return (
@@ -13,7 +12,7 @@ const Layout = ({ children }) => {
         <GlobalStyles />
       </ThemeProvider>
     </div>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

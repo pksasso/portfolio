@@ -1,29 +1,27 @@
-import React from 'react';
-import styled from 'styled-components';
-import { graphql, useStaticQuery } from 'gatsby';
-import { useSpring, animated, config } from 'react-spring';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Img from 'gatsby-image';
+import React from 'react'
+import styled from 'styled-components'
+import { graphql, useStaticQuery } from 'gatsby'
+import { useSpring, animated, config } from 'react-spring'
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Img from 'gatsby-image'
 
-import Social from '../components/social';
+import {
+  Wrapper,
+  StyledSection,
+  Contained,
+} from '../components/layout/elements'
 
-const Wrapper = styled.div`
-  display: flex;
-  position: relative;
-  justify-content: center;
-  flex-direction: column;
-  /* width: 100vw; */
-  height: 100vh;
-`;
+import Social from '../components/social'
 
 const Head = styled.div`
   display: flex;
   width: 100%;
+  height: 100%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-`;
+`
 
 const Name = styled(animated.h1)`
   color: #fff;
@@ -31,7 +29,7 @@ const Name = styled(animated.h1)`
   font-size: 4rem;
   font-weight: 300;
   margin-top: 20px;
-`;
+`
 
 const SubTitle = styled(animated.h2)`
   color: #fff;
@@ -39,27 +37,31 @@ const SubTitle = styled(animated.h2)`
   font-weight: 300;
   font-size: 2.5rem;
   margin-top: 15px;
-`;
+`
 
 const ProfilePicture = styled(Img)`
   box-shadow: 0px 5px 12px -1px rgba(73, 73, 73, 1);
   border-radius: 100px;
-`;
+`
 
 const ArrowWrapper = styled.div`
   position: absolute;
+  width: 2rem;
+  height: 2rem;
+  bottom: 0;
+  left: 50%;
+  margin-bottom: 3rem;
+  transform: translate(-50%, 0);
   display: flex;
   align-items: center;
-  top: 90%;
-  left: 50%;
-  bottom: 0;
-  transform: translate(-50%, 0);
-`;
+  justify-content: center;
+  transition: all 0.2s ease-out;
+`
 
 const Arrow = styled(FontAwesomeIcon)`
   font-size: 4rem;
   color: ${(props) => props.theme.colors.text};
-`;
+`
 
 const Home = () => {
   const data = useStaticQuery(graphql`
@@ -76,7 +78,7 @@ const Home = () => {
         }
       }
     }
-  `);
+  `)
 
   const ProfileSpring = useSpring({
     config: config.stiff,
@@ -84,7 +86,7 @@ const Home = () => {
     opacity: 1,
     transform: 'translateY(0px)',
     from: { opacity: 0, transform: 'translateY(40px)' },
-  });
+  })
 
   const NameSpring = useSpring({
     config: config.stiff,
@@ -92,7 +94,7 @@ const Home = () => {
     opacity: 1,
     transform: 'translateY(0px)',
     from: { opacity: 0, transform: 'translateY(40px)' },
-  });
+  })
 
   const SubtitleSpring = useSpring({
     config: config.stiff,
@@ -100,23 +102,27 @@ const Home = () => {
     opacity: 1,
     transform: 'translateY(0px)',
     from: { opacity: 0, transform: 'translateY(40px)' },
-  });
+  })
 
   return (
-    <Wrapper>
-      <Head>
-        <animated.div style={ProfileSpring}>
-          <ProfilePicture fixed={data.image.childImageSharp.fixed} />
-        </animated.div>
-        <Name style={NameSpring}>Patrick Sasso</Name>
-        <SubTitle style={SubtitleSpring}>FrontEnd Developer</SubTitle>
-        <Social />
-      </Head>
-      <ArrowWrapper>
-        <Arrow icon={faChevronDown} />
-      </ArrowWrapper>
-    </Wrapper>
-  );
-};
+    <StyledSection fullHeight>
+      <Contained>
+        <Wrapper>
+          <Head>
+            <animated.div style={ProfileSpring}>
+              <ProfilePicture fixed={data.image.childImageSharp.fixed} />
+            </animated.div>
+            <Name style={NameSpring}>Patrick Sasso</Name>
+            <SubTitle style={SubtitleSpring}>FrontEnd Developer</SubTitle>
+            <Social />
+          </Head>
+          <ArrowWrapper>
+            <Arrow icon={faChevronDown} />
+          </ArrowWrapper>
+        </Wrapper>
+      </Contained>
+    </StyledSection>
+  )
+}
 
-export default Home;
+export default Home
