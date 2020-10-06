@@ -1,13 +1,7 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
 module.exports = {
   siteMetadata: {
     title: `Patrick Sasso | Front-end Developer`,
-    siteUrl: `https://www.gatsbyjs.org`,
+    siteUrl: `https://patricksasso.netlify.app/`,
     description: `Meu portifólio pessoal.`,
     social: {
       linkedin: 'patricksasso',
@@ -43,7 +37,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://www.github.oi/pksasso/portfolio`,
+        siteUrl: `https://patricksasso.netlify.app`,
       },
     },
     {
@@ -91,7 +85,7 @@ module.exports = {
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,
         display: `standalone`,
-        //icon: `scr/images/icon.png` 512x512
+        icon: `scr/images/icon.png`,
       },
     },
     //Always the last
@@ -102,4 +96,4 @@ module.exports = {
       },
     },
   ],
-};
+}
