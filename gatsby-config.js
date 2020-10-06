@@ -85,7 +85,7 @@ module.exports = {
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,
         display: `standalone`,
-        icon: `scr/images/icon.png`,
+        icon: `static/images/icon.png`,
       },
     },
     //Always the last
